@@ -24,6 +24,13 @@ export class AppMockBackend {
       case 'no product':
         this.mockServerClient.mockSimpleResponse('/products', [], 200);
         break;
+      case 'three products':
+        this.mockServerClient.mockSimpleResponse('/products', [
+          { id: 1, name: 'Product 1'},
+          { id: 2, name: 'Product 2'},
+          { id: 3, name: 'Product 3'}
+        ], 200);
+        break;
     }
   }
 }

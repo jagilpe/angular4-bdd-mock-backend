@@ -7,7 +7,6 @@ Feature: List the shop's products
     When I go to the product list page
     Then I should get an empty list message
 
-  @pending
   Scenario: Get a list of products
     Given the shop has three products
     When I go to the product list page

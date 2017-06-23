@@ -23,7 +23,15 @@ defineSupportCode(({ Before, Given, When, Then }) => {
     return productListPage.get();
   });
 
-  Then(/^I should get an empty list message$/, (callback) => {
-    productListPage.hasEmptyListMessage().should.eventually.be.true.notify(callback);
+  Then(/^I should( not)? get an empty list message$/, (negate, callback) => {
+    if (!!negate) {
+      productListPage.hasEmptyListMessage().should.eventually.be.false.notify(callback);
+    } else {
+      productListPage.hasEmptyListMessage().should.eventually.be.true.notify(callback);
+    }
+  });
+
+  Then(/^the product list has:$/, (expectedProducts, callback) => {
+    productListPage.getProducts().should.eventually.deep.equal(expectedProducts.hashes()).notify(callback);
   });
 });
