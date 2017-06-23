@@ -8,7 +8,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
+    "e2e": "ng e2e --environment=e2e",
     "pree2e": "webdriver-manager update"
   },
   "private": true,
@@ -46,6 +46,8 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "mockserver-client": "^1.0.16",
+    "mockserver-grunt": "^1.0.42",
     "phantomjs-prebuilt": "^2.1.14",
     "protractor": "~5.1.2",
     "protractor-cucumber-framework": "^3.1.2",

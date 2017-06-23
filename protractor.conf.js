@@ -1,6 +1,8 @@
 // Protractor configuration file, see link for more information
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
+var MOCKSERVER_PORT = 11080;
+
 exports.config = {
   allScriptsTimeout: 11000,
   specs: [
@@ -29,5 +31,12 @@ exports.config = {
     require('ts-node').register({
       project: 'e2e/tsconfig.e2e.json'
     });
+    let mockServer = require('mockserver-grunt');
+    return mockServer.start_mockserver({ serverPort: MOCKSERVER_PORT });
+  },
+  afterLaunch: () => {
+    // ...
+    let mockServer = require('mockserver-grunt');
+    return mockServer.stop_mockserver({ serverPort: MOCKSERVER_PORT });
   }
 };

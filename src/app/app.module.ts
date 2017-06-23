@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { APP_CONFIG, DEFAULT_APP_CONFIG } from './app-config';
 
 const appRoutes: Routes = [
   { path: '',  component: HomeComponent }
@@ -20,7 +21,9 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    { provide: APP_CONFIG, useValue: DEFAULT_APP_CONFIG }
+  ],
   entryComponents: [
     HomeComponent
   ],
