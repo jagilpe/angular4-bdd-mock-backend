@@ -2,7 +2,6 @@ Feature: List the shop's products
   As a user of the shop
   I should get a list of products
 
-  @pending
   Scenario: An empty products list
     Given the shop has no product
     When I go to the product list page
