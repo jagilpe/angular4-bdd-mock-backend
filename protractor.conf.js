@@ -18,7 +18,7 @@ exports.config = {
   frameworkPath: require.resolve('protractor-cucumber-framework'),
   cucumberOpts: {
     require: ['./e2e/**/*.ts'],
-    tags: [],
+    tags: [ "~@pending" ],
     strict: true,
     format: ["pretty"],
     dryRun: false,
